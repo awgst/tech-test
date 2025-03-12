@@ -23,5 +23,9 @@ class AppServiceProvider extends ServiceProvider
             'App\Repositories\Student\StudentRepository',
             'App\Repositories\Student\EloquentStudentRepository'
         );
+        $this->app->bind(
+            'App\Repositories\Course\CourseRepository',
+            'App\Repositories\Course\EloquentCourseRepository'
+        );       
     }
 }

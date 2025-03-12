@@ -20,11 +20,20 @@ Route::middleware(['auth'])->group(function () {
     Route::get('settings/password', Password::class)->name('settings.password');
     Route::get('settings/appearance', Appearance::class)->name('settings.appearance');
 
+    // Student
     Route::group(['prefix' => 'student'], function () {
         Route::get('index', App\Livewire\Student\Index::class)->name('student.index');
         Route::get('create', App\Livewire\Student\Create::class)->name('student.create');
         Route::get('edit/{id}', App\Livewire\Student\Edit::class)->name('student.edit');
         Route::get('show/{id}', App\Livewire\Student\Show::class)->name('student.show');
+    });
+
+    // Course
+    Route::group(['prefix' => 'course'], function () {
+        Route::get('index', App\Livewire\Course\Index::class)->name('course.index');
+        Route::get('create', App\Livewire\Course\Create::class)->name('course.create');
+        Route::get('edit/{id}', App\Livewire\Course\Edit::class)->name('course.edit');
+        Route::get('show/{id}', App\Livewire\Course\Show::class)->name('course.show');
     });
 });
 
