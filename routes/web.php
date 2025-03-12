@@ -19,6 +19,13 @@ Route::middleware(['auth'])->group(function () {
     Route::get('settings/profile', Profile::class)->name('settings.profile');
     Route::get('settings/password', Password::class)->name('settings.password');
     Route::get('settings/appearance', Appearance::class)->name('settings.appearance');
+
+    Route::group(['prefix' => 'student'], function () {
+        Route::get('index', App\Livewire\Student\Index::class)->name('student.index');
+        Route::get('create', App\Livewire\Student\Create::class)->name('student.create');
+        Route::get('edit/{id}', App\Livewire\Student\Edit::class)->name('student.edit');
+        Route::get('show/{id}', App\Livewire\Student\Show::class)->name('student.show');
+    });
 });
 
 require __DIR__.'/auth.php';
