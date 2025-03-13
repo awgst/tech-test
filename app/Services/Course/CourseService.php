@@ -52,7 +52,8 @@ class CourseService
                 throw new \App\Exceptions\NotFoundException();
             }
 
-            return $course->update($data);
+            $course->name = $data['name'];
+            return $this->courseRepository->update($course);
         } catch (\Exception $e) {
             Log::error($e->getMessage());
             return false;

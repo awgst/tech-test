@@ -26,6 +26,10 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind(
             'App\Repositories\Course\CourseRepository',
             'App\Repositories\Course\EloquentCourseRepository'
-        );       
+        );
+        $this->app->bind(
+            'App\Repositories\Assesment\AssesmentRepository',
+            'App\Repositories\Assesment\EloquentAssesmentRepository'
+        );
     }
 }

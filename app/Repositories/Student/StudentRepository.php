@@ -45,4 +45,19 @@ interface StudentRepository
      * @return bool
      */
     public function delete(int $id);
+
+    /**
+     * Get all with assesments
+     * 
+     * @return \Illuminate\Database\Eloquent\Collection | null
+     */
+    public function getAllWithAssesments();
+
+    /**
+     * Update all
+     * 
+     * @param $students
+     * @return bool
+     */
+    public function updateAll($students);
 }

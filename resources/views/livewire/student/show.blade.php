@@ -18,6 +18,18 @@
                     <dt class="text-sm font-medium text-gray-500">Final Grade Letter</dt>
                     <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">{{ $student->final_grade_letter }}</dd>
                 </div>
+                <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                    <dt class="text-sm font-medium text-gray-500">Average Score On Quiz</dt>
+                    <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">{{ $metric['quiz'] }}</dd>
+                </div>
+                <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                    <dt class="text-sm font-medium text-gray-500">Average Score On Exam</dt>
+                    <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">{{ $metric['exam'] }}</dd>
+                </div>
+                <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                    <dt class="text-sm font-medium text-gray-500">Average Score On Essay</dt>
+                    <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">{{ $metric['essay'] }}</dd>
+                </div>
             </dl>
         </div>
     </div>

@@ -35,6 +35,14 @@ Route::middleware(['auth'])->group(function () {
         Route::get('edit/{id}', App\Livewire\Course\Edit::class)->name('course.edit');
         Route::get('show/{id}', App\Livewire\Course\Show::class)->name('course.show');
     });
+
+    // Assessment
+    Route::group(['prefix' => 'assesment'], function () {
+        Route::get('index', App\Livewire\Assesment\Index::class)->name('assesment.index');
+        Route::get('create', App\Livewire\Assesment\Create::class)->name('assesment.create');
+        Route::get('edit/{id}', App\Livewire\Assesment\Edit::class)->name('assesment.edit');
+        Route::get('show/{id}', App\Livewire\Assesment\Show::class)->name('assesment.show');
+    });
 });
 
 require __DIR__.'/auth.php';

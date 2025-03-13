@@ -4,6 +4,7 @@ namespace App\Services\Student;
 
 use App\Models\Student;
 use App\Repositories\Student\StudentRepository;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Support\Facades\Log;
 
 class StudentService {
@@ -59,6 +60,24 @@ class StudentService {
     public function delete(int $id): bool {
         try {
             return $this->studentRepository->delete($id);
+        } catch (\Exception $e) {
+            Log::error($e->getMessage());
+            return false;
+        }
+    }
+
+    public function getAllWithAssesments(): ?Collection {
+        try {
+            return $this->studentRepository->getAllWithAssesments();
+        } catch (\Exception $e) {
+            Log::error($e->getMessage());
+            return null;
+        }
+    }
+
+    public function updateAll($students): bool {
+        try {
+            return $this->studentRepository->updateAll($students);
         } catch (\Exception $e) {
             Log::error($e->getMessage());
             return false;
