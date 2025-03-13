@@ -13,7 +13,7 @@
                             <select wire:model="student_id" id="student_id" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" style="color: black">
                                 <option value="">Select a student</option>
                                 @foreach($students as $student)
-                                    <option value="{{ $student->id }}">{{ $student->name }}</option>
+                                    <option value="{{ $student['id'] }}">{{ $student['name'] }}</option>
                                 @endforeach
                             </select>
                             @error('student_id') <span class="text-red-500 text-xs">{{ $message }}</span> @enderror
@@ -24,7 +24,7 @@
                             <select wire:model="course_id" id="course_id" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" style="color: black">
                                 <option value="">Select a course</option>
                                 @foreach($courses as $course)
-                                    <option value="{{ $course->id }}">{{ $course->name }}</option>
+                                    <option value="{{ $course['id'] }}">{{ $course['name'] }}</option>
                                 @endforeach
                             </select>
                             @error('course_id') <span class="text-red-500 text-xs">{{ $message }}</span> @enderror

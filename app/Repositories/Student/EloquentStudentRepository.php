@@ -65,4 +65,25 @@ class EloquentStudentRepository implements StudentRepository
         }
     }
 
+    public function getAllWithAssesments()
+    {
+        try {
+            return $this->model->with(['assesments'])->get();
+        } catch (\Exception $e) {
+            Log::error($e->getMessage());
+            return null;
+        }
+    }
+
+    public function updateAll($students): bool
+    {
+        try {
+            foreach ($students as $student) $student->save();
+            return true;
+        } catch (\Exception $e) {
+            Log::error($e->getMessage());
+            return false;
+        }
+    }
+
 }

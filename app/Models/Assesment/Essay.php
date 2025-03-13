@@ -21,4 +21,9 @@ class Essay extends Assesment
 
         parent::boot();
     }
+
+    public function getGradeWeight()
+    {
+        return 0.25;
+    }
 }

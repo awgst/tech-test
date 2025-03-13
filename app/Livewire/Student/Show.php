@@ -22,8 +22,6 @@ class Show extends Component
         if (!$this->student) {
             abort(404);
         }
-
-        // dd($this->metric);
         
         return view('livewire.student.show');
     }

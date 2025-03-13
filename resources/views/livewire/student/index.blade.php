@@ -19,6 +19,9 @@
             <div class="mt-4 sm:ml-16 sm:mt-0 sm:flex-none">
                 <a href="{{ route('student.create') }}" class="block rounded-md bg-indigo-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Add Student</a>
             </div>
+            <div class="mt-4 sm:ml-16 sm:mt-0 sm:flex-none">
+                <button wire:click="calculateFinalGrade" class="block rounded-md bg-indigo-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Generate Grade</button>
+            </div>
         </div>
         <div class="mt-8 flow-root">
             <div class="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
