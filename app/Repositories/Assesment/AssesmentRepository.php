@@ -44,4 +44,13 @@ interface AssesmentRepository
      * @return bool
      */
     public function delete(int $id): bool;
+
+    /**
+     * Get by student id and type
+     * 
+     * @param int $studentId
+     * @param string $type
+     * @return array
+     */
+    public function getByStudentIdAndType(int $studentId, string $type): array;
 }

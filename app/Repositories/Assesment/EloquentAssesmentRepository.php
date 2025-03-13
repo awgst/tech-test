@@ -64,4 +64,18 @@ class EloquentAssesmentRepository implements AssesmentRepository
             return false;
         }
     }
+
+    public function getByStudentIdAndType(int $studentId, string $type): array
+    {
+        try {
+            return $this->model
+                ->where('student_id', $studentId)
+                ->where('types', $type)
+                ->get()
+                ->toArray();
+        } catch (\Exception $e) {
+            Log::error($e->getMessage());
+            return [];
+        }
+    }
 }

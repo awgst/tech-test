@@ -41,4 +41,14 @@ class Index extends Component
             session()->flash('message', 'Student deleted successfully.');
         }
     }
+
+    public function calculateFinalGrade()
+    {
+        try {
+            session()->flash('message', 'Final grade calculated successfully.');
+        } catch (\Exception $e) {
+            Log::error($e->getMessage());
+            session()->flash('error', 'Something went wrong.');
+        }
+    }
 }

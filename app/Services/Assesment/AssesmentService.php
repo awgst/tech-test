@@ -100,4 +100,21 @@ class AssesmentService
             return false;
         }
     }
+
+    /**
+     * Get assessments by student ID and type
+     *
+     * @param int $studentId
+     * @param string $type
+     * @return array
+     */
+    public function getByStudentAndType(int $studentId, string $type): array
+    {
+        try {
+            return $this->repository->getByStudentIdAndType($studentId, $type);
+        } catch (\Exception $e) {
+            Log::error($e->getMessage());
+            return [];
+        }
+    }
 }
