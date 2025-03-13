@@ -17,6 +17,7 @@
                     <flux:navlist.item icon="users" :href="route('student.index')" :current="request()->routeIs('student.*')" wire:navigate>{{ __('Students') }}</flux:navlist.item>
                     <flux:navlist.item icon="book-open" :href="route('course.index')" :current="request()->routeIs('course.*')" wire:navigate>{{ __('Courses') }}</flux:navlist.item>
                     <flux:navlist.item icon="book-open" :href="route('assesment.index')" :current="request()->routeIs('assesment.*')" wire:navigate>{{ __('Assesments') }}</flux:navlist.item>
+                    <flux:navlist.item icon="book-open" :href="route('count-char.index')" :current="request()->routeIs('count-char.*')" wire:navigate>{{ __('Count Char') }}</flux:navlist.item>
                 </flux:navlist.group>
             </flux:navlist>
 

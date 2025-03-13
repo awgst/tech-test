@@ -43,6 +43,10 @@ Route::middleware(['auth'])->group(function () {
         Route::get('edit/{id}', App\Livewire\Assesment\Edit::class)->name('assesment.edit');
         Route::get('show/{id}', App\Livewire\Assesment\Show::class)->name('assesment.show');
     });
+
+    Route::group(['prefix' => 'char'], function () {
+       Route::get('index', App\Livewire\CountChar\Index::class)->name('count-char.index'); 
+    });
 });
 
 require __DIR__.'/auth.php';
